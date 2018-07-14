@@ -184,6 +184,12 @@ nep.summary <- bind_rows(lapply(1:nrow(nep_table), function(i) {
         shoulder)
 }))
 
+regsite = paste(site$region, site$site, sep='_')
+mm = match(regsite, nep.summary$site_name)
+sum(!is.na(mm))
+nrow(nep.summary)
+#here's where i'll bind latlongs to the summary dfs
+
 # get gppDOYquants from dayDistribution04282016B.R
 ted.jim.metrics <-
     full_join(

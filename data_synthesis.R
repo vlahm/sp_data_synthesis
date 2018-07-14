@@ -15,6 +15,9 @@ con = dbConnect(RMariaDB::MariaDB(), dbname='sp',
     username='root', password=pw)
 
 site = dbReadTable(con, "site")
+site = site[! site$region %in% c('KS','SE'),]
+# saveRDS(site, '~/git/streampulse/jim_projects/sitedata.rds')
+
 model = dbReadTable(con, "model")
 dbDisconnect(con)
 
@@ -61,7 +64,7 @@ for(m in mods){
     # d = z$details
 
     gpp1 = er1 = data.frame(site_name=paste(d$region, d$site, sep='_'),
-        year=d$year)
+        year=d$year, )
     gpp2 = er2 = as.data.frame(matrix(NA, nrow=1, ncol=365,
         dimnames=list(NULL, paste0('d', 1:365))))
 
