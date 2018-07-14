@@ -1,0 +1,257 @@
+"Site","Duration_Years","Canopy_Pct","Urban_Pct","Ag_Pct","Forest_Pct","Wastewater_NPDES","Dam","Lat","Long","Location","Region","WatershedArea_Km2","MADischarge_m3_per_s","Width_m","WaterTemp_degC","Elevation_m","AnnualGPP_gC_per_m2","AnnualER_gC_per_m2"
+"Fuirosos",2,,,,,"No","No","41°42'00.0""N","2°34'00.0""E","Spain","Europe",16.2,0.06,2.3,15,,100.00,1020.00
+"Cruise Ck",1,,,,,"No","No",,,"Kentucky","North America",11.1,,,,,690.078125,1402.96875
+"Middle Ck",1,,,,,"No","No",,,"Kentucky","North America",8.5,,,,,433.4375,1105.265625
+"Elijah",1,,,,,"No","No",,,"Kentucky","North America",10.1,,,,,872.578125,1385.859375
+"Steep Ck",1,,,,,"No","No",,,"Kentucky","North America",9.6,,,,,701.484375,1163.4375
+"Ashby Fk",1,,,,,"No","No",,,"Kentucky","North America",11.4,,,,,664.4140625,1125.796875
+"Steep Ck",1,,,,,"No","No",,,"Kentucky","North America",9.6,,,,,516.1328125,934.171875
+"Middle Ck",1,,,,,"No","No",,,"Kentucky","North America",8.5,,,,,470.5078125,821.25
+"Oakbrook",1,,,,,"No","No",,,"Kentucky","North America",10.1,,,,,829.8046875,1132.640625
+"Sunnybrook",1,,,,,"No","No",,,"Kentucky","North America",5.7,,,,,650.15625,923.90625
+"Cruise Ck",1,,,,,"No","No",,,"Kentucky","North America",11.1,,,,,481.9140625,745.96875
+"Elijah",1,,,,,"No","No",,,"Kentucky","North America",10.1,,,,,952.421875,1180.546875
+"Sunnybrook",1,,,,,"No","No",,,"Kentucky","North America",5.7,,,,,792.734375,958.125
+"Oakbrook",1,,,,,"No","No",,,"Kentucky","North America",10.1,,,,,1006.6015625,1136.0625
+"Threemile",1,,,,,"No","No",,,"Kentucky","North America",8.2,,,,,567.4609375,636.46875
+"Threemile",1,,,,,"No","No",,,"Kentucky","North America",8.2,,,,,567.4609375,598.828125
+"Ashby Fk",1,,,,,"No","No",,,"Kentucky","North America",11.4,,,,,667.265625,653.578125
+"Watershed 1",1,,0,0,100,"No","No"," 44°12'27.50""N","122°15'32.89""W","Oregon","North America",0.959,0.04,,,,36,355.875
+"Montsant (Reservoir impact)",1,,,,,"No","Yes","41.284696, 0.755145",,"Spain","Europe",97,,,15,,415.31296875,1355.4650735294
+"Cinca (Reservoir impact)",1,,,,,"No","Yes","42.121025, 0.230082",,"Spain","Europe",2375,,,15,,350.02359375,977.8511029412
+"Montsant",1,,,,,"No","No","41.328935, 0.871957",,"Spain","Europe",97,,,15,,261.203125,774.5514705882
+"Ara",1,,,,,"No","No","42.472703, -0.028821",,"Spain","Europe",800,,,15,,220.140625,558.7720588235
+"Siurana (Reservoir Impact)",1,,,,,"No","Yes","41.247874, 0.907618",,"Spain","Europe",604,,,15,,99.74765625,256.4393382353
+"Siurana",1,,,,,"No","No","41.257037, 0.943023",,"Spain","Europe",604,,,15,,62.734375,146.5367647059
+"Creightons Creek",1,25,,,,"No","No","36°44'28""S 145°25'01""E",,"Australia","Asia/Pacifica",174,,9,14.4,,25.8494140625,172.091796875
+"Shepherd Creek",2,60,,,,"No","No","39°34'N,","84°34'W","Ohio","North America",0.26,,2.2,11,,117.1875,648.53
+"Ogeechee River",1,,,,,"No","No","32°08'N","81°25'W","Florida","North America",6860,,33,19,,255.00,1459.25
+"Chena River Site 1",1,0,,,,"No","No","64°53.9090'N, 146°38.2710'W",,"Alaska","North America",3000,,,19,,253.90625,986.0294117647
+"Chena River Site 3",1,0,,,,"No","No","64°49.052'N","147°06.273'W","Alaska","North America",4000,,,19,,144.53125,675.5514705882
+"Chena River Site 2",1,0,,,,"No","No","64°52.8470'N","146°43.360'W","Alaska","North America",3500,,,19,,159.375,635.8455882353
+"Chena River Site 4",1,0,,,,"No","No","64°48.253'N","147°07.901'W","Alaska","North America",4000,,,19,,150,593.3823529412
+"Girnock Catchment",2,0,,,,"No","No","57.013670, -3.134222",,"Scotland","Europe",31,,9,7,,992.3828571429,1526.7428571429
+"Girnock Catchment",2,70,,,,"No","No","57.046958, -3.114869",,"Scotland","Europe",25,,9,7,,1121.28,1401.6
+"Big Springs",1,0,,,,"No","No","39°52'03""N","75°49'06""W","New York","North America",2.38,,1.63,11,,179.08,1682.76
+"Wests",1,0,,,,"No","No","39°54'02""N","75°47'28""W","New York","North America",1.6,,1.04,11,,101.52,984.69
+"Big Springs",1,80,,,,"No","No","39°52'14""N","75°49'20""W","New York","North America",2.1,,3.34,11,,75.85,742.35
+"Hannums",1,0,,,,"No","No","39°54'03""N","75°47'22""W","New York","North America",0.75,,0.87,11,,141.44,804.34
+"Moorheads",1,0,,,,"No","No","39°52'37""N","75°48'09""W","New York","North America",2.17,,1.15,11,,362.15,966.98
+"West Branch White",1,0,,,,"No","No","39°46'04""N","75°50'01""W","New York","North America",1.52,,1.23,11,,115.20,702.09
+"White Clay ",1,0,,,,"No","No","39°51'18""N","75°47'03""W","New York","North America",7.62,,2.94,11,,229.27,793.07
+"Moorheads",1,80,,,,"No","No","39°52'51""N","75°48'19""W","New York","North America",1.61,,2.92,11,,62.16,620.77
+"West Branch White",1,80,,,,"No","No","39°46'03""N","75°50'13""W","New York","North America",1.33,,2.77,11,,33.08,577.29
+"Pocopson",1,0,,,,"No","No","39°54'11""N","75°38'44""W","New York","North America",21,,4.47,11,,152.27,673.10
+"Doe Wister",1,80,,,,"No","No","39°54'09""N","75°50'51""W","New York","North America",26.4,,8.84,11,,309.11,818.03
+"Birch Run",1,80,,,,"No","No","39°55'49""N","75°52'47""W","New York","North America",8.11,,6.38,11,,120.91,624.79
+"Teters",1,0,,,,"No","No","39°52'20""N","75°47'13""W","New York","North America",3,,1.43,11,,258.35,731.88
+"Wests",1,80,,,,"No","No","39°53'54""N","75°47'32""W","New York","North America",1.44,,2.66,11,,52.47,519.32
+"Buck and Doe Run",1,0,,,,"No","No","39°55'17""N","75°47'43""W","New York","North America",121,,11.9,11,,401.50,831.72
+"Birch Run",1,0,,,,"No","No","39°55'55""N","75°53'01""W","New York","North America",7.03,,2,11,,337.63,754.42
+"Pocopson",1,80,,,,"No","No","39°54'12""N","75°38'28""W","New York","North America",21.5,,8.3,11,,104.94,466.99
+"Doe Wister",1,0,,,,"No","No","39°54'14""N","75°51'06""W","New York","North America",24.24,,5.94,11,,538.38,877.61
+"Buck and Doe Run",1,80,,,,"No","No","39°55'32""N","75°46'55""W","New York","North America",123.3,,16.7,11,,179.08,515.29
+"Fishers",1,80,,,,"No","No","39°55'44""N","75°51'43""W","New York","North America",12.94,,5.4,11,,111.21,445.25
+"Hannums",1,80,,,,"No","No","39°53'57""N","75°47'16""W","New York","North America",0.69,,2.48,11,,58.17,362.32
+"Gramies",1,0,,,,"No","No","39°41'05""N","75°51'02""W","New York","North America",3.54,,2.53,11,,378.12,681.15
+"White Clay ",1,80,,,,"No","No","39°51'47""N","75°47'03""W","New York","North America",6.56,,4.87,11,,136.30,432.36
+"Fishers",1,0,,,,"No","No","39°55'40""N","75°51'35""W","New York","North America",13.67,,4,11,,208.16,447.66
+"Teters",1,80,,,,"No","No","39°52'29""N","75°47'29""W","New York","North America",1.92,,2.62,11,,73.57,309.98
+"Gramies",1,80,,,,"No","No","39°41'18""N","75°51'10""W","New York","North America",3.14,,3.97,11,,131.74,311.59
+"Agroforest (transition)",1,,,,,"No","No","-1.441467, 110.421115",,"Kalimantan","Asia/Pacifica",22.97,,,27,,70.71875,821.25
+"Young Oil Palm",1,,,,,"No","No","-1.441467, 110.421115",,"Kalimantan","Asia/Pacifica",26.21,,,29,,86.6875,805.1470588235
+"Mature Oil Palm",1,,,,,"No","No","-1.093843, 110.325431",,"Kalimantan","Asia/Pacifica",12.83,,,28,,86.6875,708.5294117647
+"Forest",1,,,,,"No","No","-1.198613, 110.119132",,"Kalimantan","Asia/Pacifica",10.65,,,25,,57.03125,322.0588235294
+"La Trobe w",,60,,,,"No","No",,,"Australia","Asia/Pacifica",325,,,15,,26.23,665.05
+"La Trobe h",,40,,,,"No","No",,,"Australia","Asia/Pacifica",225,,,15,,67.30,647.34
+"La Trobe a",,80,,,,"No","No",-37.870973,145.812993,"Australia","Asia/Pacifica",12.5,,8.4,15,,17.11,478.26
+"La Trobe r",,0,,,,"No","No",,,"Australia","Asia/Pacifica",4140,,24,15,,84.41,450.88
+"La Trobe M",,0,,,,"No","No",,,"Australia","Asia/Pacifica",2500,,27,15,,216.72,302.74
+"Waitangi",9,64,0,96.7,3.2,"No","No",,,"Auckland, NZ","Asia/Pacifica",17.7,0.036,,15.7,,1257.88,4046.025
+"Kumeu",9,6,1.9,76.1,21.8,"No","No",,,"Auckland, NZ","Asia/Pacifica",45.77,0.02,,14.81,,1077.21,3562.85625
+"Vaughan",9,20,3.6,45.9,50.5,"No","No",,,"Auckland, NZ","Asia/Pacifica",4.14,0.001,,15.21,,459.90,2229.69375
+"Ararimu",9,80,0,41.6,58,"No","No",,,"Auckland, NZ","Asia/Pacifica",70.68,0.055,,14.75,,354.51,1682.19375
+"Kaipara",9,68,1.5,61.4,36.9,"No","No",,,"Auckland, NZ","Asia/Pacifica",156.21,0.124,,15.06,,294.28,1491.9375
+"Kaukapakapa",9,74,0,76.1,23.5,"No","No",,,"Auckland, NZ","Asia/Pacifica",61.63,0.015,,14.75,,396.94,1520.68125
+"Rangitopuni",9,72,0.5,64.5,34.2,"No","No",,,"Auckland, NZ","Asia/Pacifica",83.69,0.016,,14.69,,95.81,992.34375
+"Ngakaroa",9,40,0,93.8,5.1,"No","No",,,"Auckland, NZ","Asia/Pacifica",4.71,0.007,,14.52,,385.99,1178.49375
+"Wairoa",9,36,0,62.6,37.3,"No","No",,,"Auckland, NZ","Asia/Pacifica",114.42,0.365,,14.88,,369.56,822.61875
+"West Hoe",9,94,0,0.1,99.9,"No","No",,,"Auckland, NZ","Asia/Pacifica",0.54,0.002,,13.27,,6.84,243.6375
+"Puhinui",9,0,44.2,43.3,12.4,"No","No",,,"Auckland, NZ","Asia/Pacifica",10.43,0.014,,16.79,,1720.52,1931.30625
+"Mahurangi",9,74,0.6,44.1,55.3,"No","No",,,"Auckland, NZ","Asia/Pacifica",46.5,0.075,,15.55,,294.28,494.11875
+"Hoteo",9,54,0.3,53.4,45.9,"No","No",,,"Auckland, NZ","Asia/Pacifica",268.32,0.379,,15.71,,517.39,607.725
+"Ichetucknee River",1,,,,,"No","No","-1.441467, 110.421115",,"Florida","North America",1215.3559364178,,30,20.7,,1252.41,1755.22
+"Kissemmee R",2,0,,,,"No","No",27.46324,-81.169349,"Florida","North America",1963,,22,25,,451.00,1520.00
+"South Platte",3,0,,,,"No","No","40.165831, -104.840431",,"Colorado","North America",13000,,40,13,,131.4,788.4
+"Brocky Burn",2,10,,,,"No","No","56.937701, -2.634039",,"Scotland","Europe",1.3,,,7.5,,259.15,963.6
+"Water of Dye",2,10,,,,"No","No","56.939562, -2.627462",,"Scotland","Europe",41.4,,,8,,332.15,985.5
+"Mississippi River",2,,,,,"No","No","30*26'44.4","91*11'29.6""","Mississippi","North America",2900000,17866,820,17.8,,70,305
+"Chattahoochee",2,,,,,"No","No","33*39'24""","–84*40'25""","Tennessee","North America",5335,100,120,,,111,225
+"Blue River 1",1,,,,,"No","No",34.413539,-96.604545,"Oklahoma","North America",280,,15.8,17,,781.25,1764.71
+"Blue River 1",1,,,,,"No","No",34.245202,-96.543831,"Oklahoma","North America",527.8,,18.2,17,,343.75,1235.29
+"Blue River 1",1,,,,,"No","No","34.395130,",-96.608202,"Oklahoma","North America",300,,10.8,17,,2437.50,2029.41
+"site 5",1,8.5,,,,"No","No",43.318437,-3.278812,,"North America",80,,8.2,12.1,,520.47,871.17
+"site 7",1,31,,,,"No","No",43.279554,-3.25975,,"North America",100,,13.5,12.7,,573.39,500.64
+"State Cr",1,,,,,"No","No",46.414676,-88.908014,"Michigan","North America",24,0.067,1.5,6.2,,102.66,1223.82
+"Shane Cr",1,,,,,"No","No",46.477248,-88.905766,"Michigan","North America",45.5,0.041,1.5,6.7,,11.41,692.43
+"Walton Cr",1,,,,,"No","No",46.439915,-88.896458,"Michigan","North America",36,0.046,1.5,6.4,,68.44,708.53
+"Seine",1,,,,,"No","No",,,"France","Europe",78000,,,,,399,663
+"Hugh White Cr.",1,,,,,"No","No",35.055097,-83.427578,"North Carolina","North America",0.61,,,12,820,2.90,112.00
+"Fort River  ",2,80,,,,"No","No",42.359093,-72.513491,"Massachusetts  ","North America",104,,14,14,,203.03,587.76
+"Bear Brook",2,,,,,"No","No",43.945673,-71.721825,"New Hampshire","North America",1.32,,,7,,1.75,52.00
+"Murray River (Albury)",1,,,,,"No","Yes","-36.073593, 146.872960",,"Australia","Asia/Pacifica",17350,,,15,,221,287
+"Murray River (Barmah)",1,,,,,"No","Yes","-36.060747, 144.904206",,"Australia","Asia/Pacifica",25200,,,16.5,,376,427
+"Murray River (Hattah)",1,,,,,"No","Yes","-34.702433, 142.500025",,"Australia","Asia/Pacifica",275150,,,18.5,,315,315
+"Klamath (Turwar)",1,0,,,,"No","No",,,"California","North America",40600,72,85,,,284.53125,401.6911764706
+"Klamath (Weichpeck)",1,0,,,,"No","No",,,"California","North America",32200,44,51,,,455.3125,482.2058823529
+"Klamath (Seiad)",1,0,,,,"No","No",,,"California","North America",27600,33,52,,,626.25,602.8676470588
+"Shatto Creek",1,0,,,,"No","No","41°13'18""N","86°02'44""W","Indiana","North America",10.36,,,13,,496.5625,1638.0882352941
+"Erpe",1,,,,,"Yes","No","52°29'14""N","13°38’42""E","Germany, near Berlin","Europe",10.343808,,4,13.5,,3140.14,9532.94
+"Demnitzer Mill Brook",1,,,,,"Yes","No","52°25’14""N","14°14’7""E","Germany, near Berlin","Europe",1.450656,,3,16,,296.56,5652.13
+"Demnitzer Mill Brook",1,,,,,"No","No","52°25’14""N","14°14’7""E","Germany, near Berlin","Europe",1.450656,,1,16,,426.59,3913.01
+"Erpe",1,,,,,"No","No","52°29'14""N","13°38’42""E","Germany, near Berlin","Europe",10.343808,,1,13.5,,996.91,1996.76
+"Rambla Salada",2,,,,,"No","No","38.124822, -1.119770",,"Spain","Europe",44.7,,19.56,15,,733.421875,629.625
+"Zillierbach",1,100,,,,"No","No","51.807508, 10.768640",,"Germany","Europe",0.1450656,,1,8.6333333333,,35.15625,734.5588235294
+"Hassel",1,0,,,,"No","No","51.680628, 10.875390",,"Germany","Europe",0.189216,,1,11.3333333333,,135,734.5588235294
+"Ochsenbach",1,100,,,,"No","No","51.734081, 10.680254",,"Germany","Europe",0.2081376,,1,9.2,,23.90625,563.8235294118
+"Rappbode",1,0,,,,"No","No","51.663102, 10.756129",,"Germany","Europe",1.89216,,2,12,,123.75,496.3235294118
+"New Hope Creek NC",1,,,,,"No","No","35.992874,",-79.034422,"North Carolina","North America",85,,,16,,90.63,209.63
+"Ray Branch",1,82,,,,"No","No","35.203330, -83.535851",,"North Carolina","North America",14.38,,4.8,15,,70,555.4411764706
+"Caler Main",1,72,,,,"No","No","35.268722, -83.381330",,"North Carolina","North America",18.67,,4.3,15,,111.875,547.9411764706
+"Crawford Branch",1,68,,,,"No","No","35.192366, -83.394384",,"North Carolina","North America",5.27,,2.4,15,,117.8125,516.1764705882
+"Skeenah Creek",1,57,,,,"No","No","35.109082, -83.415069",,"North Carolina","North America",6.02,,3,15,,166.25,498.0882352941
+"Jones Creek",1,73,,,,"No","No","35.058176, -83.430684",,"North Carolina","North America",15.31,,7.3,15,,101.875,377.2058823529
+"Ball Creek",1,100,,,,"No","No","35.058176, -83.430684",,"North Carolina","North America",7.16,,4.6,15,,33.4375,300.4411764706
+"Cowee Creek",1,64,,,,"No","No","35.269440, -83.390889",,"North Carolina","North America",29.13,,5.5,15,,92.5,348.5294117647
+"Watauga Creek",1,69,,,,"No","No","35.226832, -83.355613",,"North Carolina","North America",16.7,,4,15,,78.75,306.6176470588
+"Bates Creek",1,70,,,,"No","No","35.098883, -83.387816",,"North Carolina","North America",2.18,,2.9,15,,39.6875,94.4117647059
+"OH2 (Reference)",2,,,,,"No","No",,,"Iceland","Europe",0.5,,,5,,219,693.5
+"KM2  ",1,70,,,,"No","No","32.512117,",-84.66,"Georgia","North America",2.31,,1.6,16.6,"o2",18.49,930.37
+"BC2  ",1,70,,,,"No","No","32.416537,",-84.760571,"Georgia","North America",0.749,,1,15.925,,29.57,683.20
+"LC  ",1,70,,,,"No","No","32.502508,",-84.715391,"Georgia","North America",3.32,,1.9,17.675,,19.15,659.93
+"BC1  ",1,70,,,,"No","No","32.411637,",-84.757277,"Georgia","North America",2.1,,1.3,15,,21.11,542.73
+"KM1  ",1,70,,,,"No","No","32.513872,",-84.650105,"Georgia","North America",3.69,,1.9,16.4,,39.10,540.13
+"SB2  ",1,70,,,,"No","No","32.377249,",-84.691754,"Georgia","North America",1.23,,1.5,16,,42.95,516.18
+"LPK  ",11,70,,,,"No","No","32.378258,",-84.665925,"Georgia","North America",0.331,,0.8,17.225,,14.44,418.80
+"SB4  ",1,70,,,,"No","No","32.376252,",-84.702107,"Georgia","North America",1,,1.3,16.55,,24.16,384.59
+"HB  ",1,70,,,,"No","No",32.361192,-84.685445,"Georgia","North America",2.15,,1.7,15.975,,13.79,285.68
+"SB3  ",1,70,,,,"No","No","32.377820,",-84.696732,"Georgia","North America",0.717,,1,15.725,,4.14,267.63
+"Mississippi River",2,,,,,"No","No","43.723065, -91.256603",,"Minnesota","North America",167800,,,12,,875.2808503284,1146.631829365
+"Ivishak Spring Creek",2,30,,,,"No","No","69.025464, -147.720297",,"Alaska","North America",24.5079771429,,2,5.8,,476.5,904
+"Sutton Stream",2,0,,,,"No","No","-45.601516, 170.049633",,"New Zealand","Asia/Pacifica",8.84,,2.7,5.6,600,95.00,739.13
+"Altzola  ",1,12.3,,,,"Yes","No","43.236027, -2.400784",,"Spain","Europe",462.54,,31.1,15.5,,730.00,6859.85
+"Berastegi  ",1,14.5,,,,"Yes","No","43.123385, -1.981705",,"Spain","Europe",28.66,,12.2,15.2,,501.88,5941.99
+"Leitzaran  ",1,19.6,,,,"Yes","No","43.202741, -2.012524",,"Spain","Europe",114.49,,22.2,13.7,,878.28,3494.34
+"Oleta  ",1,48,,,,"Yes","No","43.342975, -2.506248",,"Spain","Europe",67.42,,14.4,15.2,,376.41,2753.60
+"On˜ ati  ",1,35,,,,"Yes","No","43.053475, -2.432426",,"Spain","Europe",99.29,,14.5,11,,467.66,2705.29
+"Elorrio  ",1,39,,,,"Yes","No","43.131294, -2.554685",,"Spain","Europe",29.36,,8.8,17.6,,467.66,2479.85
+"Estanda  ",1,22,,,,"Yes","No","43.049921, -2.230127",,"Spain","Europe",54.69,,24,14.9,,467.66,2431.54
+"Balmaseda  ",1,21,,,,"Yes","No","43.075046, ",-3.352905,"Spain","Europe",195.76,,23.9,15.1,,707.19,2447.65
+"Aizarnazabal  ",1,51,,,,"Yes","No","43.253699, -2.243372",,"Spain","Europe",268.96,,22.7,15.3,,1254.69,2769.71
+"Alegia  ",1,15,,,,"Yes","No","43.099989, -2.098463",,"Spain","Europe",329.74,,36.2,15.1,,501.88,2012.87
+"Lasarte  ",1,1.1,,,,"Yes","No","43.268056, -2.023022",,"Spain","Europe",786.77,,46.4,16,,718.59,2173.90
+"Herrerias  ",1,3.4,,,,"Yes","No","43.177361, -3.082457",,"Spain","Europe",254.36,,26.6,13,,353.59,1706.91
+"Gardea  ",1,0,,,,"Yes","No","43.133700, -2.970765",,"Spain","Europe",329.74,,19,16.9,,752.81,2012.87
+"Amorebieta  ",1,0,,,,"Yes","No","43.219004, -2.735020",,"Spain","Europe",237.18,,23.3,15.4,,319.38,1578.09
+"Erenozu",1,18.2,,,,"Yes","No","43.237073, -1.934826",,"Spain","Europe",215.5,,15.8,13.5,,444.84,1481.47
+"Aitzu  ",1,20,,,,"Yes","No","43.131955, -2.351250",,"Spain","Europe",59.73,,12.9,13.8,,399.22,1417.06
+"Berriatua  ",1,31.7,,,,"Yes","No","43.310667, -2.465050",,"Spain","Europe",92.81,,18.7,13.9,,307.97,1062.79
+"Muxika  ",1,70,,,,"Yes","No","43.291382, -2.687886",,"Spain","Europe",31.41,,9.5,15.4,,342.19,1095.00
+"Oiartzun  ",1,34.5,,,,"Yes","No","43.293844, -1.857353",,"Spain","Europe",56.13,,22,15.2,,524.69,1014.49
+"Sycamore Creek",,0,,,,"No","No","33.733617, -111.521566",,"Arizona","North America",505,,,17,,944.00,2250.00
+"8 (Pre)",1,,,,,,,,,"North Carolina","North America",0.5,,,,,15.40,708.33
+"128 (Pre)",1,,,,,,,,,"North Carolina","North America",0.5,,,,,5.13,509.86
+"32 (Pre)",1,,,,,,,,,"North Carolina","North America",0.5,,,,,10.27,167.67
+"Accotink Creek",,,,,,,,,,"Virginia","North America",10.33,,,,,56.11875,190.25625
+"C5",,,,,,"No","No",,,"North Carolina","North America",0.075,,,12.7,,1.90,110.00
+"Portneuf",8,10,,,,"No","No",42.822088,-112.40368,"Idaho","North America",3500,,22,12,,494.8206521739,3999.4987212276
+"Kaps",1,37.5,,,,"No","No","0°45.9’","36°22.3’","Kenya","Africa",2.36,,2,18.65,,764.0405273438,2190.8051470588
+"Bomet",1,37.5,,,,"No","No","0°50.5’","36°20.1’","Kenya","Africa",13.98,,1.85,17.7,,1587.75,2573.25
+"Bondet",1,77.5,,,,"No","No","0°44.1’","36°27.2’","Kenya","Africa",2,,2.45,14.35,,18.25,814.0036764706
+"Issey I",1,62.5,,,,"No","No","0°44.8’","36°32.0’","Kenya","Africa",23.2,,3.25,13.45,,122.6171875,844.5992647059
+"Issey II",1,37.5,,,,"No","No","0°46’","36°30.5’","Kenya","Africa",31.98,,4.45,15.65,,92.9609375,791.4595588235
+"Mosoriot",1,80,,,,"No","No","0°42.2’","36°25.4’","Kenya","Africa",4.55,,2.05,13.65,,91.25,705.3088235294
+"Sara",1,72.5,,,,"No","No","0°44.7’","36°28.3’","Kenya","Africa",9.96,,1.8,14.2,,134.59375,695.6470588235
+"Kaki",1,27.5,,,,"No","No","0°50.5’","36°27.6’","Kenya","Africa",6.98,,1.55,18.55,,463.5571289063,864.7279411765
+"TNK",1,47.5,,,,"No","No","0°44.8’","36°22.0’","Kenya","Africa",12.7,,1.65,18.35,,242.2045898438,611.9117647059
+"Little Tennessee River site 1",2,,,,,"No","No","35.090480, -83.380481",,"North Carolina","North America",370,,18.3,14.7,,142.00,523.00
+"Little Tennessee River site 2 ",2,,,,,"No","No","35.122139, -83.378202",,"North Carolina","North America",390,,17.2,15,,158.00,385.00
+"Little Tennessee River site 3 ",2,,,,,"No","No","35.234954, -83.395719",,"North Carolina","North America",836,,46.3,15.8,,275.00,385.00
+"Little Tennessee River site 4  ",2,,,,,"No","Yes","35.258075, -83.442541",,"North Carolina","North America",1000,,40.5,16,,406.00,439.00
+"Black Creek",1,,,,,"No","No","32.152912, -81.468713",,"Georgia","North America",600,,8,24,,93.75,562.5
+"Deep Creek (Invaded)",2,60,,,,"No","No","42.168 N, 112.658 W",,"Idaho","North America",25,,,8,,784,828
+"Deep Creek (Reference)",2,0,,,,"No","No","42.168 N, 112.658 W",,"Idaho","North America",25,,,8,,299,316
+"Silver River",1,,,,,"No","No","29.204795, -82.003768",,"Florida","North America",2910.72,,70,20.7,,1277.50,1795.21
+"GS",2,100,,,,"No","No",,,"Ireland","Europe",0.1,,0.5,,,23.3828125,390.4963235294
+"GC (Post-felling)",1,,,,,"No","No",,,"Ireland","Europe",0.1,,0.5,,,26.234375,135.2647058824
+"GC (pre-felling)",1,100,,,,"No","No",,,"Ireland","Europe",0.1,,0.5,,,14.828125,90.1764705882
+"Silver Springs",2,20,,,,"No","No","29.204795, -82.003768",,"Florida","North America",2910.72,,30,23,,3200,3000
+"La Vega",2,40,,,,"No","No","18.349894, -65.761392",,"Puerto Rico (Loquillo LTER)","Caribbean",24,,17,24.5,,131.20,798.71
+"Puente Roto",2,39,,,,"No","No","18.326747, -65.749936",,"Puerto Rico (Loquillo LTER)","Caribbean",18,,15,24.5,,202.00,655.39
+"Bisley",2,89,,,,"No","No","18.311836, -65.747704",,"Puerto Rico (Loquillo LTER)","Caribbean",0.4,,5,23,,21.67,392.00
+"DR1",1,,,,,"no","No","39.292348, -76.745612",,"Maryland","North America",2,,,15,,185.3515625,591.7830882353
+"DR2",1,,,,,"No","No","39.292348, -76.745612",,"Maryland","North America",1,,,18,,582.859375,1018.5110294118
+"DR5",1,,,,,"No","No","39.292348, -76.745612",,"Maryland","North America",2.5,,,16,,431.44140625,438.8051470588
+"Orwell Brook",2,,,,,"No","No","43.528126, -76.013962",,"New York","North America",48.3,,,11.4,,423.45703125,557.5643382353
+"Walker Branch",2,90,,,,"No","No","35.959255, -84.280029",,"Tennessee","North America",0.384,,2.1,13.7,,236.015625,660.825
+"Selke (Forest)",2,,,,,"No","No",,,"Germany","Europe",184,1.5272,,,,48.125,574.1911764706
+"Selke (Ag)",2,,,,,"No","No",,,"Germany","Europe",272,0.20672,,,,230.3125,578.6029411765
+"Fosso Bognatore (WWTP)",1,,4,60,36,"Yes","No",,,"Italy","Europe",19,0.35,1.75,,,42.43,4010.44
+"Fosso Bognatore (Control)",1,,4,60,36,"No","No",,,"Italy","Europe",19,0.35,1.75,,,401.04,1494.68
+"Espraiado",1,72,,,,"No","No","S21°58.831'","W47°52.418'","Brazil","South America",2.49,0.01,0.6,18.7666666667,,31.9375,3253.0625
+"Fazzari",1,77,,,,"No","No","S21°58.134'","W47°53.138'","Brazil","South America",0.69,0.002,1.3,19.9333333333,,18.25,1802.1875
+"Broa",1,66,,,,"No","No","S22°11.682'","W47°53.930'","Brazil","South America",2.68,0.019,0.8,19.8,,34.21875,1617.40625
+"Canchim",1,77,,,,"No","No","S21°58.012'","W47°50.562'","Brazil","South America",1.17,0.004,1.2,19.75,,15.96875,542.9375
+"Mineirinho",1,74,,,,"No","No","S22°0.213'","W47°55.680'","Brazil","South America",0.82,0.055,1.2,19.95,,13.6875,561.1875
+"Santa Maria",2,58,,,,"No","No","S22°2.672'","W47°58.083","Brazil","South America",6.24,0.069,1.4,22.1666666667,,13.6875,570.3125
+"Lezat Down",,,,,,"No","Yes","43.291165, 1.349919",,"France","Europe",275,,4.9,0,,672.96875,6054.7058823529
+"Lezat Up",,,,,,"No","No","43.274468, 1.353982",,"France","Europe",275,7,5.1,0,,39.921875,821.25
+"Montegut Down",,,,,,"No","Yes","43.064725, 1.489778",,"France","Europe",10,,3.6,,,410.625,1143.3088235294
+"Montegut Up",,,,,,"No","No","43.064725, 1.489778",,"France","Europe",10,,4.7,,,376.40625,676.3235294118
+"Viroin",,,,,,"No","No",,,"Belgium","Europe",725,20,,15,,456.25,1449.26
+"Jemez River",,,,,,"No","No","43.291165, 1.349919",,"New Mexico","North America",114,,,20,,600.111328125,774.8198529412
+"PBCP",2,,,,,"No","No","39.015323, -76.943572",,"Maryland","North America",21,,,15,,138.7,266.45
+"SLIGO",1,,,,,"No","No","38.981359, -76.997971",,"Maryland","North America",10.9,,,15,,178.85,277.4
+"NERP",2,,,,,"No","No","38.950979, -76.960812",,"Maryland","North America",117,,,15,,240.9,321.2
+"Daly",,0,,,,"No","No","43.528126, -76.013962",,"Australia","Asia/Pacifica",20000,,50,29,,249.53125,701.4705882353
+"River Glatt",,,,,,"No","No",,,"Switzerland","Europe",170,,,10,,790.00,1130.00
+"Necker",,,,,,"No","No","47.393256, 9.083109",,"Switzerland","Europe",126,,15,8,,290.86,547.50
+"Thur",,,,,,"No","No","47.597190, 8.680943",,"Switzerland","Europe",1696,,50,10,,570.31,998.38
+3,,,,,,"No","No",,,"Switzerland","Europe",2.3,0.3,,,,309,1345
+6,,,,,,"No","No",,,"Switzerland","Europe",2.1,0.12,,,,841,1735
+1,,,,,,"No","No",,,"Switzerland","Europe",14.1,0.78,,,,416,1189
+5,,,,,,"No","No",,,"Switzerland","Europe",0.1,0.01,,,,141,841
+7,,,,,,"No","No",,,"Switzerland","Europe",1.5,0.12,,,,169,763
+4,,,,,,"No","No",,,"Switzerland","Europe",2.2,0.11,,,,132,714
+11,,,,,,"No","No",,,"Switzerland","Europe",46.4,2.6,,,,1031,1441
+9,,,,,,"No","No",,,"Switzerland","Europe",16.2,0.9,,,,62,457
+10,,,,,,"No","No",,,"Switzerland","Europe",5.4,0.13,,,,508,878
+12,,,,,,"No","No",,,"Switzerland","Europe",2.2,0.12,,,,492,742
+2,,,,,,"No","No",,,"Switzerland","Europe",34.6,1.93,,,,409,603
+8,,,,,,"No","No",,,"Switzerland","Europe",203.8,11.37,,,,638,778
+"Darlington Point",,0,,,,"No","Yes","-34.563561, 145.997222",,"Australia","Asia/Pacifica",60000,,48.7534626039,18.5,,227.229609375,441.9532720588
+"Narrandera",,0,,,,"No","Yes","-34.751140, 146.529844",,"Australia","Asia/Pacifica",42000,,46.3986583884,18,,408.1983203125,610.4222426471
+"Gundagai",,0,,,,"No","Yes","-35.068108, 148.096434",,"Australia","Asia/Pacifica",17000,,47.3837716565,14.9,,45.11171875,236.5522058824
+"Wagga Wagga",,0,,,,"No","Yes","-35.094969, 147.348758",,"Australia","Asia/Pacifica",28000,,65.4193027325,17,,164.751875,295.5533823529
+"North St. Vrain Wide",1,,,,,,,,,"Colorado","North America",84,,8,8.4,,80.484375,195.2205882353
+"North St. Vrain Narrow",1,,,,,,,,,"Colorado","North America",82,,9.4,7.7,,7.171875,77.2058823529
+"Kings Creek",,31,,,,"No","No","39.088070, -96.585587",,"Kansas","North America",1.34,,0.9,13.2,,134.685,326.8575
+"Kings Creek",,66,,,,"No","No","39.104486, -96.601531",,"Kansas","North America",10.6,,1.6,12.1,,121.545,274.2975
+"Kings Creek",,12,,,,"No","No","39.088070, -96.585587",,"Kansas","North America",0.55,,0.7,15.6,,169.725,262.8
+2,,0,,,,"No","No","37.741947, -94.335561",,"Kansas","North America",0.19,,2.6,17,,8.724375,88.213125
+1,,8,,,,"No","No","37.735493, -94.334364",,"Kansas","North America",0.22,,1.66,17,,125.54140625,203.3484375
+5,,54,,,,"No","No","37.747614, -94.333997",,"Kansas","North America",0.098,,0.85,17,,6.16875,61.51125
+6,,60,,,,"No","No","37.747614, -94.333997",,"Kansas","North America",0.53,,2.19,17,,15.069375,68.20875
+3,,20,,,,"No","No","37.745984, -94.340190",,"Kansas","North America",0.11,,0.77,17,,4.935,20.51109375
+4,,68,,,,"No","No","37.745984, -94.340190",,"Kansas","North America",0.1,,1.05,17,,3.1725,10.04625
+"Rock Springs Run 2",,,,,,"No","No","28.776161, -81.499249",,"Florida","North America",197.5945691906,,37,22.4,,114.0625,1542.6617647059
+"Rock Springs Run 1",,,,,,"No","No","28.721002, -81.451785",,"Florida","North America",239.3934203655,,31,23,,160.828125,1169.0735294118
+"Wekiva River 2",,,,,,"No","No","28.806060, -81.417187",,"Florida","North America",1086.7701305483,,120,22.4,,614.796875,1478.25
+"Wekiva River 1",,,,,,"No","No","28.714286, -81.452612",,"Florida","North America",592.7837075718,,21,23.7,,241.8125,904.9852941176
+"Alexander Springs Run",,,,,,"No","No","29.081821, -81.566332",,"Florida","North America",471.1870496084,,63,21.9,,646.734375,996.7720588235
+"Juniper Creek",,,,,,"No","No","29.215480, -81.656874",,"Florida","North America",94.9973890339,,10.2,23.5,,651.296875,982.2794117647
+"Gum Slough",,,,,,"No","No","28.697936, -82.247028",,"Florida","North America",243.6155265448,,21.8181818182,23.2,,651.8671875,1067.2224264706
+"Powder",,,,,,"No","No","45'48' S, 170'25' E",,"New Zealand","Asia/Pacifica",9.9,,3.4,7.9,100,67.64,863.12
+"Big",,,,,,"No","No","45'46' S, 170'22' E",,"New Zealand","Asia/Pacifica",12.8,,3.2,9.5,80,168.81,374.55
+"Lee",,,,,,"No","No","45'36' S, 170'27' E",,"New Zealand","Asia/Pacifica",96.5,,3.8,9.6,340,143.95,326.25
+"Three O Clock",,,,,,"No","No","45'47'S, 170°03' E",,"New Zealand","Asia/Pacifica",38.7,,6,8.9,280,420.09,434.78
