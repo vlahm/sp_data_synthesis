@@ -1,0 +1,10 @@
+bfi
+canal
+dam
+get elevation some other way
+runoff
+nlcd11
+census2010
+epaFRS (npdes)
+PRISM (ppt30 and tmean)
+forest loss 2011 (cnpy; assuming not riparian?)
