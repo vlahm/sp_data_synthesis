@@ -15,27 +15,38 @@ con = dbConnect(RMariaDB::MariaDB(), dbname='sp',
     username='root', password=pw)
 
 site = dbReadTable(con, "site")
+
+#get site elevation ####
+
+# install.packages('geonames')
+library(geonames)
+options(geonamesUsername="vlahm")
+# elev = mapply(function(x, y) GNsrtm3(x, y), site$latitude, site$longitude)
+# elev = t(elev)
+# elev = data.frame(elev_m=unlist(elev[,1]), lat=unlist(elev[,3]),
+#     long=unlist(elev[,2]))
+# write.csv(elev, '/home/mike/git/streampulse/jim_projects/elev.csv',
+#     row.names=FALSE)
+elev = read.csv('/home/mike/git/streampulse/jim_projects/elev.csv',
+    stringsAsFactors=FALSE)
+site = merge(site, elev, by.x=c('latitude','longitude'),
+    by.y=c('lat','long'), sort=FALSE)
+
 site = site[! site$region %in% c('KS','SE'),]
 # saveRDS(site, '~/git/streampulse/jim_projects/sitedata.rds')
 
 model = dbReadTable(con, "model")
 dbDisconnect(con)
 
-#add already existing data to output dataframe ####
+#add site table data to output dataframe ####
 
-out = data.frame('Region'=model$region)
-out$Site = model$site
+out = data.frame('Site'=paste(model$region, model$site, sep='_'))
 out$Year = model$year
-out$lat = site$latitude[which(site$site == out$Site)]
+site$regionsite = paste(site$region, site$site, sep='_')
+out = merge(out, site, by.x='Site', by.y='regionsite')
+out[,c('Site','latitude','longitude','elev_m')]
 
-
-
-
-dbFetch(res)
-dbClearResult(res)
-
-# trying to convert model outputs into metab summary rows ####
-rm(list=ls()); cat('\014')
+#convert model outputs into metab summary rows ####
 
 # setwd('~/Desktop/untracked/sm_out')
 setwd('~/Desktop/untracked/sm_pred')
@@ -64,7 +75,7 @@ for(m in mods){
     # d = z$details
 
     gpp1 = er1 = data.frame(site_name=paste(d$region, d$site, sep='_'),
-        year=d$year, )
+        year=d$year)
     gpp2 = er2 = as.data.frame(matrix(NA, nrow=1, ncol=365,
         dimnames=list(NULL, paste0('d', 1:365))))
 
@@ -92,3 +103,43 @@ fixer_upper = function(t){
 
 gpp_table = fixer_upper(gpp_table)
 er_table = fixer_upper(er_table)
+
+#summarize the summaries into site-year rows ####
+source('/home/mike/git/streampulse/jim_projects/AnnualMetabolismSummary_MJV.R')
+
+colnames(met.summary) = paste0('gpp.', colnames(met.summary))
+out = merge(out, met.summary, by.x='Site', by.y='site_name')
+colnames(er.summary) = paste0('er.', colnames(er.summary))
+out = merge(out, er.summary, by.x='Site', by.y='site_name')
+colnames(nep.summary) = paste0('nep.', colnames(nep.summary))
+out = merge(out, nep.summary, by.x='Site', by.y='site_name')
+
+#medFootprint, eightyFootprint ####
+v = readRDS('../sm_out/fit_AZ_LV_2018-01-01_2018-12-31_bayes_binned_obsproc_trapezoid_DO-mod_stan.rds')
+# v$fit@fit$daily$
+
+
+#get nhd comids and bring in streamcat data ####
+# install.packages('sf')
+library(sf)
+library(stringr)
+setwd('/home/mike/git/streampulse/jim_projects/nhd_catchments/')
+# setwd('NHDPlusCA/NHDPlus18/NHDPlusCatchment/')
+
+#memory cant handle reading in all shapefiles
+f = list.files()
+for(i in f){
+    setwd(i)
+    f2 = list.files()
+    for(j in f2){
+        m = str_match(j, 'NHDPlus\\d\\d?$')[1]
+        if(!is.na(m)){
+            setwd(m)
+            setwd('NHDPlusCatchment')
+            assign(m, read_sf(dsn=".", layer="Catchment"))
+            print(m)
+            setwd('../..')
+        }
+    }
+    setwd('..')
+}
