@@ -9,9 +9,6 @@ def get_dir_contents():
     ftp.dir(ls_out.append)
     return ls_out
 
-# f = extract_dir_info()
-# m = re.match('.*(?:\s)(.*' + 'NHD' + '.*)$', f[6])
-
 def list_only_filenames(search_string, dir_list):
     files = []
     for x in range(len(dir_list)):
@@ -20,30 +17,11 @@ def list_only_filenames(search_string, dir_list):
             files.append(m.group(1))
     return files
 
-# def list_full_filenames(search_string, file_list):
-#     files = []
-#     for x in range(len(file_list)):
-#         m = re.match('(.*(?:' + search_string + ')(?:.*))', file_list[x])
-#         if m:
-#             files.append(m.group(1))
-#     return files
-
-# region_dirs = list_only_filenames('NHDPlus', f)
-
 def enter_and_search(search_string, dir):
     ftp.cwd(dir)
     dir_info = get_dir_contents()
-    # if full:
-    #     file_names = list_full_filenames(search_string, dir_info)
-    # else:
     file_names = list_only_filenames(search_string, dir_info)
     return file_names
-
-# files = enter_and_search('NHDPlus', region_dirs[0])
-
-# m = re.match('(.*(?:' + 'Cat' + ')(?:.*)).7z', files[21])
-# m = re.match('(.*(?:' + 'Cat' + ')(?:.*)).7z', files[0])
-# filename_base = m.group(1)
 
 def download_and_extract(search_string, file_list, zip_type):
     for x in range(len(file_list)):
@@ -106,31 +84,31 @@ for r in region_dirs:
 ftp.quit()
 
 #acquire streamcat data
-# wd = '/home/mike/git/streampulse/jim_projects/streamcat_data'
-#
-# ftp = ftplib.FTP('newftp.epa.gov')
-# ftp.login() #login anonymously
-# ftp.cwd('EPADataCommons/ORD/NHDPlusLandscapeAttributes/StreamCat/HydroRegions')
-#
-# f = get_dir_contents()
-# files = list_only_filenames('BFI_Region', f)
-# download_and_extract('BFI_Region', files, 'zip')
-# files = list_only_filenames('CanalDensity', f)
-# download_and_extract('CanalDensity', files, 'zip')
-# files = list_only_filenames('Dams_Region', f)
-# download_and_extract('Dams_Region', files, 'zip')
-# files = list_only_filenames('Runoff_Region', f)
-# download_and_extract('Runoff_Region', files, 'zip')
-# files = list_only_filenames('NLCD2011_Region', f)
-# download_and_extract('NLCD2011_Region', files, 'zip')
-# files = list_only_filenames('ForestLossByYear0013_Region', f)
-# download_and_extract('ForestLossByYear0013_Region', files, 'zip')
-# files = list_only_filenames('USCensus2010_Region', f)
-# download_and_extract('USCensus2010_Region', files, 'zip')
-# files = list_only_filenames('PRISM_1981_2010', f)
-# download_and_extract('PRISM_1981_2010', files, 'zip')
-#
-# ftp.quit()
+wd = '/home/mike/git/streampulse/jim_projects/streamcat_data'
+
+ftp = ftplib.FTP('newftp.epa.gov')
+ftp.login() #login anonymously
+ftp.cwd('EPADataCommons/ORD/NHDPlusLandscapeAttributes/StreamCat/HydroRegions')
+
+f = get_dir_contents()
+files = list_only_filenames('BFI_Region', f)
+download_and_extract('BFI_Region', files, 'zip')
+files = list_only_filenames('CanalDensity', f)
+download_and_extract('CanalDensity', files, 'zip')
+files = list_only_filenames('Dams_Region', f)
+download_and_extract('Dams_Region', files, 'zip')
+files = list_only_filenames('Runoff_Region', f)
+download_and_extract('Runoff_Region', files, 'zip')
+files = list_only_filenames('NLCD2011_Region', f)
+download_and_extract('NLCD2011_Region', files, 'zip')
+files = list_only_filenames('ForestLossByYear0013_Region', f)
+download_and_extract('ForestLossByYear0013_Region', files, 'zip')
+files = list_only_filenames('USCensus2010_Region', f)
+download_and_extract('USCensus2010_Region', files, 'zip')
+files = list_only_filenames('PRISM_1981_2010', f)
+download_and_extract('PRISM_1981_2010', files, 'zip')
+
+ftp.quit()
 
 
 #other potentially useful stuff

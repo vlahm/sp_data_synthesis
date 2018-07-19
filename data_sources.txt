@@ -1,0 +1,13 @@
++ Acquired NHDPlusV2 catchment shapefiles for all hydroregions from ftp.horizon-systems.com/NHDplus/NHDPlusV21/data on 7/14/18
++ Acquired StreamCAT watershed data for all hydroregions from newftp.epa.gov/EPADataCommons/ORD/NHDPlusLandscapeAttributes/StreamCat/HydroRegions on 7/15/18
+   + BFI
+   + ForestLossByYear0013
+   + NLCD2011
+   + CanalDensity
+   + PRISM_1981_2010
+   + Dams
+   + Runoff
+   + EPA_FRS
+   + USCensus2010
++ Acquired SRTM30 elevation data from geonames.org (using R package geonames) on 7/16/18
++ Accessed StreamPULSE input and metabolism data on 7/18/18
