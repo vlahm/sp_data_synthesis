@@ -110,6 +110,30 @@ download_and_extract('PRISM_1981_2010', files, 'zip')
 
 ftp.quit()
 
+#acquire NHDPlusV2 flowlines for all regions
+wd = '/home/mike/git/streampulse/jim_projects/nhd_flowlines'
+
+ftp = ftplib.FTP('ftp.horizon-systems.com')
+ftp.login() #login anonymously
+ftp.cwd('NHDplus/NHDPlusV21/data')
+
+f = get_dir_contents()
+region_dirs = list_only_filenames('NHDPlus', f)
+
+for r in region_dirs:
+    subfiles = enter_and_search('NHDPlus', r)
+    if len(subfiles) < 8: #subfiles are actually subregion directories
+        for f in subfiles:
+            subfiles2 = enter_and_search('NHDPlus', f)
+            download_and_extract('NHDSnapshot_', subfiles2, '7z')
+            ftp.cwd('..')
+        ftp.cwd('..')
+    else:
+        download_and_extract('NHDSnapshot_', subfiles, '7z')
+        ftp.cwd('..')
+
+ftp.quit()
+
 
 #other potentially useful stuff
 

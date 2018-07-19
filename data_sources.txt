@@ -11,3 +11,6 @@
    + USCensus2010
 + Acquired SRTM30 elevation data from geonames.org (using R package geonames) on 7/16/18
 + Accessed StreamPULSE input and metabolism data on 7/18/18
++ Acquired dam locations from ftp://rockyftp.cr.usgs.gov/vdelivery/Datasets/Staged/Hydrography/NHD/National/HighResolution/GDB/ on 7/19/18
++ Acquired NPDES discharge facility locations from https://echo.epa.gov/tools/data-downloads#downloads on 7/19/18
++ Acquired NHDPlusV2 flowline shapefiles for all hydroregions from ftp.horizon-systems.com/NHDplus/NHDPlusV21/data on 7/19/18

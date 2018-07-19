@@ -9,6 +9,7 @@ library(RMariaDB)
 library(DBI)
 library(dplyr)
 library(stringr)
+library(streamMetabolizer)
 
 #read in template datasets and pull in site data ####
 d1 = read.csv('/home/mike/git/streampulse/jim_projects/powell_vars.csv')
@@ -236,74 +237,95 @@ out = out %>% #prob no longer needed
 
 #get k (read in data at end of this section) ####
 
-# setwd('~/Desktop/untracked/sm_out')
-# mods = list.files()
-#
-# k600 = matrix(NA, nrow=length(mods), ncol=3,
-#     dimnames=list(NULL, c('site', 'year', 'k')))
-#
-# for(i in 1:length(mods)){
-#     print(i)
-#     mod_specs = strsplit(mods[i], '_')[[1]]
-#     k600[i,1] = paste(mod_specs[2], mod_specs[3], sep='_')
-#     k600[i,2] = substr(mod_specs[4], 1, 4)
-#     m = readRDS(mods[i])
-#     k600[i,3] = mean(m$fit@fit$daily$K600_daily_mean, na.rm=TRUE)
-#     rm(m)
-# }
-#
-# k600 = data.frame(k600, stringsAsFactors=FALSE)
-# k600$k = as.numeric(k600[,3])
-# # write.csv(k600, '/home/mike/git/streampulse/jim_projects/k600.csv',
-# #     row.names=FALSE)
+setwd('~/Desktop/untracked/sm_out')
+mods = list.files()
 
-k600 = read.csv('/home/mike/git/streampulse/jim_projects/k600.csv',
+fitdata = matrix(NA, nrow=length(mods), ncol=11,
+    dimnames=list(NULL, c('site', 'year', 'k_mean', 'temp', 'disch', 'depth',
+        'vel_med', 'vel_80th', 'k_med', 'k_80th', 'width')))
+
+for(i in 1:length(mods)){
+    print(i)
+    mod_specs = strsplit(mods[i], '_')[[1]]
+    fitdata[i,1] = paste(mod_specs[2], mod_specs[3], sep='_')
+    fitdata[i,2] = substr(mod_specs[4], 1, 4)
+    m = readRDS(mods[i])
+    k600 = m$fit@fit$daily$K600_daily_mean
+    fitdata[i,3] = mean(k600, na.rm=TRUE)
+    fitdata[i,4] = mean(m$fit@data$temp.water, na.rm=TRUE)
+    Q = m$fit@data$discharge
+    Q_mean = mean(Q, na.rm=TRUE)
+    fitdata[i,5] = Q_mean
+    depth_mean = mean(m$fit@data$depth, na.rm=TRUE)
+    fitdata[i,6] = depth_mean
+    vel = calc_velocity(Q)
+    vel_mean = calc_velocity(Q_mean)
+    fitdata[i,7] = median(vel, na.rm=TRUE)
+    fitdata[i,8] = quantile(vel, probs=0.8, na.rm=TRUE)
+    fitdata[i,9] = median(k600, na.rm=TRUE)
+    fitdata[i,10] = quantile(k600, probs=0.8, na.rm=TRUE)
+    fitdata[i,11] = (Q_mean / vel_mean) / depth_mean
+    rm(m)
+}
+
+fitdata = data.frame(fitdata, stringsAsFactors=FALSE)
+fitdata[,3:ncol(fitdata)] = lapply(fitdata[,3:ncol(fitdata)], as.numeric)
+fitdata$medFootprint = fitdata$vel_med * 3 / fitdata$k_med
+fitdata$eightyFootprint = fitdata$vel_80th * 3 / fitdata$k_80th
+# write.csv(fitdata, '/home/mike/git/streampulse/jim_projects/depth_vel_Q_L_etc.csv',
+#     row.names=FALSE)
+
+fitdata = read.csv('/home/mike/git/streampulse/jim_projects/depth_vel_Q_L_etc.csv',
     stringsAsFactors=FALSE)
 
-#get watertemp and depth too! ####
-#calc medFootprint, eightyFootprint ####
+fitdata = fitdata %>%
+    select('site', 'year', 'MADischarge_m3s'='disch', 'Width_m'='width',
+        'WaterTemp_C'='temp', 'medFootprint', 'eightyFootprint')
+out = out %>% left_join(fitdata, by=c('site_name'='site', 'year'))
 
-library(streamMetabolizer)
+#get watertemp and depth too! ####
+#calc medFootprint, eightyFootprint (obsolete) ####
+
 # setwd('/home/mike/Desktop/untracked/')
 # v = readRDS('sm_out/fit_AZ_LV_2018-01-01_2018-12-31_bayes_binned_obsproc_trapezoid_DO-mod_stan.rds')
 
-dbListFields(con, "data")
-res = dbSendQuery(con, "SELECT * FROM data WHERE variable = 'Discharge_m3s';")
-r = dbFetch(res)
-dbClearResult(res)
-dbDisconnect(con)
+# dbListFields(con, "data")
+# res = dbSendQuery(con, "SELECT * FROM data WHERE variable = 'Discharge_m3s';")
+# r = dbFetch(res)
+# dbClearResult(res)
+# dbDisconnect(con)
 
-r$regsite = paste(r$region, r$site, sep='_')
-r = r[! r$region %in% c('SE', 'KS'),]
+# r$regsite = paste(r$region, r$site, sep='_')
+# r = r[! r$region %in% c('SE', 'KS'),]
 
-#medFootprint
-agg_median = tapply(r$value, list(r$regsite, substr(r$DateTime_UTC, 1, 4)),
-    FUN=median, na.rm=TRUE)
-agg_median = as.data.frame(agg_median)
-stacked_median = data.frame(site=rownames(agg_median), year=stack(agg_median))
-stacked_median$medVelocity = calc_velocity(stacked_median$year.values)
-stacked_median = merge(stacked_median, k600, by.x=c('site', 'year.ind'),
-    by.y=c('site', 'year'))
-stacked_median$medFootprint = stacked_median$medVelocity * 3 / stacked_median$k
-
-#eightyFootprint
-agg_80 = tapply(r$value, list(r$regsite, substr(r$DateTime_UTC, 1, 4)),
-    FUN=quantile, na.rm=TRUE, probs=0.8)
-agg_80 = as.data.frame(agg_80)
-stacked_80 = data.frame(site=rownames(agg_80), year=stack(agg_80))
-stacked_80$eightyVelocity = calc_velocity(stacked_80$year.values)
-stacked_80 = merge(stacked_80, k600, by.x=c('site', 'year.ind'),
-    by.y=c('site', 'year'))
-stacked_80$eightyFootprint = stacked_80$eightyVelocity * 3 / stacked_80$k
-
-#merge
-footprint = merge(stacked_median, stacked_80,  by=c('site', 'year.ind'))
-footprint = footprint %>%
-    select(site, year=year.ind, medFootprint, eightyFootprint) %>%
-    filter(!is.na(medFootprint))
-
-out = merge(out, footprint, by.x=c('site_name', 'year'), by.y=c('site', 'year'),
-    all.x=TRUE)
+# #medFootprint
+# agg_median = tapply(r$value, list(r$regsite, substr(r$DateTime_UTC, 1, 4)),
+#     FUN=median, na.rm=TRUE)
+# agg_median = as.data.frame(agg_median)
+# stacked_median = data.frame(site=rownames(agg_median), year=stack(agg_median))
+# stacked_median$medVelocity = calc_velocity(stacked_median$year.values)
+# stacked_median = merge(stacked_median, fitdata, by.x=c('site', 'year.ind'),
+#     by.y=c('site', 'year'))
+# stacked_median$medFootprint = stacked_median$medVelocity * 3 / stacked_median$k
+#
+# #eightyFootprint
+# agg_80 = tapply(r$value, list(r$regsite, substr(r$DateTime_UTC, 1, 4)),
+#     FUN=quantile, na.rm=TRUE, probs=0.8)
+# agg_80 = as.data.frame(agg_80)
+# stacked_80 = data.frame(site=rownames(agg_80), year=stack(agg_80))
+# stacked_80$eightyVelocity = calc_velocity(stacked_80$year.values)
+# stacked_80 = merge(stacked_80, fitdata, by.x=c('site', 'year.ind'),
+#     by.y=c('site', 'year'))
+# stacked_80$eightyFootprint = stacked_80$eightyVelocity * 3 / stacked_80$k
+#
+# #merge
+# footprint = merge(stacked_median, stacked_80,  by=c('site', 'year.ind'))
+# footprint = footprint %>%
+#     select(site, year=year.ind, medFootprint, eightyFootprint) %>%
+#     filter(!is.na(medFootprint))
+#
+# out = merge(out, footprint, by.x=c('site_name', 'year'), by.y=c('site', 'year'),
+#     all.x=TRUE)
 
 #append PI contact info ####
 
