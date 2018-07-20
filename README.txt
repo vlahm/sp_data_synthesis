@@ -1,1 +1,1 @@
-AnnualMetabolismSummary_MJV.R is modified from Alisons script for the powell synthesis. this script is in obsolete along with her other R script, which has been adapted into the main body of data_synthesis.R
+AnnualMetabolismSummary_MJV.R is modified from Alisons script for the powell synthesis. this script is in obsolete/ along with her other R script, which has been adapted into the main body of data_synthesis.R

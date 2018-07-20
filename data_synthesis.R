@@ -177,48 +177,56 @@ out = nhd %>% select(site=regsite, nhdplus_id=FEATUREID) %>%
 
 setwd('streamcat_data')
 allsc = list.files()
+allsc = allsc[allsc != 'combined']
 sc_sets = unique(str_match(allsc, '(.*)(?:_Region.*)')[,2])
 
-combine_subCSV = function(pattern){
-    subset = list.files(pattern=pattern)
-    combined_csv = lapply(subset, function(x) read.csv(x))
-    combined_csv = do.call(rbind, combined_csv)
-    print(colnames(combined_csv))
-    comb = combined_csv %>% right_join(out, by=c('COMID'='nhdplus_id'))
+combine_subCSV = function(pattern, readwrite='read'){
+    if(readwrite == 'write'){
+        subset = list.files(pattern=pattern)
+        combined_csv = lapply(subset, function(x) read.csv(x))
+        combined_csv = do.call(rbind, combined_csv)
+        print(colnames(combined_csv))
+        comb = combined_csv %>% right_join(out, by=c('COMID'='nhdplus_id'))
+        write.csv(comb, paste0('combined/', pattern, '.csv'))
+    } else {
+        if(readwrite == 'read'){
+            comb = read.csv(paste0('combined/', pattern, '.csv'))
+        }
+    }
     return(comb)
 }
 
 print(sc_sets)
 
-cc = combine_subCSV('BFI')
+cc = combine_subCSV('BFI', 'read')
 bfi = cc %>% select(regsite=site_name, year=year, nhdplus_id=COMID,
     ACCUM_AREA=WsAreaSqKm, AC_BFI=BFIWs)
-cc = combine_subCSV('Runoff')
+cc = combine_subCSV('Runoff', 'read')
 runoff = cc %>% select(regsite=site_name, year=year, nhdplus_id=COMID,
     AC_RUNOFF=RunoffWs)
-cc = combine_subCSV('NLCD2011')
+cc = combine_subCSV('NLCD2011', 'read')
 nlcd = cc %>% select(regsite=site_name, year=year,
     nhdplus_id=COMID, AC_NLCD11pct21=PctUrbOp2011Ws,
     AC_NLCD11pct22=PctUrbLo2011Ws, AC_NLCD11pct23=PctUrbMd2011Ws,
     AC_NLCD11pct24=PctUrbHi2011Ws, AC_NLCD11pct81=PctHay2011Ws,
     AC_NLCD11pct82=PctCrop2011Ws, AC_NLCD11Pct41=PctDecid2011Ws,
     AC_NLCD11Pct42=PctConif2011Ws, AC_NLCD11Pct43=PctMxFst2011Ws)
-cc = combine_subCSV('PRISM')
+cc = combine_subCSV('PRISM', 'read')
 climate = cc %>% select(regsite=site_name, year=year, nhdplus_id=COMID,
     PPT30YR_AC=Precip8110Ws,
     PPT30YR_RE=Precip8110Cat, TMEAN_AC=Tmean8110Ws, TMEAN_RE=Tmean8110Cat)
-cc = combine_subCSV('USCensus2010')
+cc = combine_subCSV('USCensus2010', 'read')
 pop = cc %>% select(regsite=site_name, year=year, nhdplus_id=COMID,
     PopDen2010Ws)
-cc = combine_subCSV('ForestLoss')
+cc = combine_subCSV('ForestLoss', 'read')
 canopy = cc %>% select(regsite=site_name, year=year, nhdplus_id=COMID,
     PctFrstLoss2011Cat, PctFrstLoss2011Ws)
-cc = combine_subCSV('CanalDensity')
+cc = combine_subCSV('CanalDensity', 'read')
 canal = cc %>% select(regsite=site_name, year=year, nhdplus_id=COMID,
     CanalDensWs)
-cc = combine_subCSV('Dams')
+cc = combine_subCSV('Dams', 'read')
 dam = cc %>% select(regsite=site_name, year=year, nhdplus_id=COMID, DamDensWs)
-cc = combine_subCSV('EPA_FRS')
+cc = combine_subCSV('EPA_FRS', 'read')
 npdes = cc %>% select(regsite=site_name, year=year, nhdplus_id=COMID,
     NPDESDensWs)
 
@@ -235,47 +243,49 @@ out = out %>% #prob no longer needed
     left_join(dam, by=c('nhdplus_id', 'site_name'='regsite', 'year')) %>%
     left_join(npdes, by=c('nhdplus_id', 'site_name'='regsite', 'year'))
 
-#get k (read in data at end of this section) ####
+setwd('..')
 
-setwd('~/Desktop/untracked/sm_out')
-mods = list.files()
+#get k, depth, etc. from model output (read in data at end of this section) ####
 
-fitdata = matrix(NA, nrow=length(mods), ncol=11,
-    dimnames=list(NULL, c('site', 'year', 'k_mean', 'temp', 'disch', 'depth',
-        'vel_med', 'vel_80th', 'k_med', 'k_80th', 'width')))
-
-for(i in 1:length(mods)){
-    print(i)
-    mod_specs = strsplit(mods[i], '_')[[1]]
-    fitdata[i,1] = paste(mod_specs[2], mod_specs[3], sep='_')
-    fitdata[i,2] = substr(mod_specs[4], 1, 4)
-    m = readRDS(mods[i])
-    k600 = m$fit@fit$daily$K600_daily_mean
-    fitdata[i,3] = mean(k600, na.rm=TRUE)
-    fitdata[i,4] = mean(m$fit@data$temp.water, na.rm=TRUE)
-    Q = m$fit@data$discharge
-    Q_mean = mean(Q, na.rm=TRUE)
-    fitdata[i,5] = Q_mean
-    depth_mean = mean(m$fit@data$depth, na.rm=TRUE)
-    fitdata[i,6] = depth_mean
-    vel = calc_velocity(Q)
-    vel_mean = calc_velocity(Q_mean)
-    fitdata[i,7] = median(vel, na.rm=TRUE)
-    fitdata[i,8] = quantile(vel, probs=0.8, na.rm=TRUE)
-    fitdata[i,9] = median(k600, na.rm=TRUE)
-    fitdata[i,10] = quantile(k600, probs=0.8, na.rm=TRUE)
-    fitdata[i,11] = (Q_mean / vel_mean) / depth_mean
-    rm(m)
-}
-
-fitdata = data.frame(fitdata, stringsAsFactors=FALSE)
-fitdata[,3:ncol(fitdata)] = lapply(fitdata[,3:ncol(fitdata)], as.numeric)
-fitdata$medFootprint = fitdata$vel_med * 3 / fitdata$k_med
-fitdata$eightyFootprint = fitdata$vel_80th * 3 / fitdata$k_80th
+# setwd('~/Desktop/untracked/sm_out')
+# mods = list.files()
+#
+# fitdata = matrix(NA, nrow=length(mods), ncol=11,
+#     dimnames=list(NULL, c('site', 'year', 'k_mean', 'temp', 'disch', 'depth',
+#         'vel_med', 'vel_80th', 'k_med', 'k_80th', 'width')))
+#
+# for(i in 1:length(mods)){
+#     print(i)
+#     mod_specs = strsplit(mods[i], '_')[[1]]
+#     fitdata[i,1] = paste(mod_specs[2], mod_specs[3], sep='_')
+#     fitdata[i,2] = substr(mod_specs[4], 1, 4)
+#     m = readRDS(mods[i])
+#     k600 = m$fit@fit$daily$K600_daily_mean
+#     fitdata[i,3] = mean(k600, na.rm=TRUE)
+#     fitdata[i,4] = mean(m$fit@data$temp.water, na.rm=TRUE)
+#     Q = m$fit@data$discharge
+#     Q_mean = mean(Q, na.rm=TRUE)
+#     fitdata[i,5] = Q_mean
+#     depth_mean = mean(m$fit@data$depth, na.rm=TRUE)
+#     fitdata[i,6] = depth_mean
+#     vel = calc_velocity(Q)
+#     vel_mean = calc_velocity(Q_mean)
+#     fitdata[i,7] = median(vel, na.rm=TRUE)
+#     fitdata[i,8] = quantile(vel, probs=0.8, na.rm=TRUE)
+#     fitdata[i,9] = median(k600, na.rm=TRUE)
+#     fitdata[i,10] = quantile(k600, probs=0.8, na.rm=TRUE)
+#     fitdata[i,11] = (Q_mean / vel_mean) / depth_mean
+#     rm(m)
+# }
+#
+# fitdata = data.frame(fitdata, stringsAsFactors=FALSE)
+# fitdata[,3:ncol(fitdata)] = lapply(fitdata[,3:ncol(fitdata)], as.numeric)
+# fitdata$medFootprint = fitdata$vel_med * 3 / fitdata$k_med
+# fitdata$eightyFootprint = fitdata$vel_80th * 3 / fitdata$k_80th
 # write.csv(fitdata, '/home/mike/git/streampulse/jim_projects/depth_vel_Q_L_etc.csv',
 #     row.names=FALSE)
 
-fitdata = read.csv('/home/mike/git/streampulse/jim_projects/depth_vel_Q_L_etc.csv',
+fitdata = read.csv('depth_vel_Q_L_etc.csv',
     stringsAsFactors=FALSE)
 
 fitdata = fitdata %>%
@@ -283,7 +293,6 @@ fitdata = fitdata %>%
         'WaterTemp_C'='temp', 'medFootprint', 'eightyFootprint')
 out = out %>% left_join(fitdata, by=c('site_name'='site', 'year'))
 
-#get watertemp and depth too! ####
 #calc medFootprint, eightyFootprint (obsolete) ####
 
 # setwd('/home/mike/Desktop/untracked/')
@@ -336,4 +345,4 @@ out = out %>%
     select(-reg)
 
 #write output ####
-write.csv(out, 'spDataSynthesis_20180718.csv')
+write.csv(out, 'spDataSynthesis_20180719.csv', row.names=FALSE)
